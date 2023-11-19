@@ -1,5 +1,7 @@
 package com.example.app;
 
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 @Service
 public class TopKWordsService {
 
+    @Cacheable(value = "topKWordsCache", keyGenerator = "customKeyGenerator")
     public List<String> findTopKWords(MultipartFile file, int k) throws IOException {
         Map<String, Integer> wordFrequencyMap = new HashMap<>();
 
@@ -48,6 +51,14 @@ public class TopKWordsService {
             Map.Entry<String, Integer> entry = maxHeap.poll();
             System.out.println(entry);
             topKWords.add(entry.getKey());
+        }
+
+        // Add delay to test caching
+        try {
+            long time = 3000L;
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new IllegalStateException(e);
         }
 
         return topKWords;
