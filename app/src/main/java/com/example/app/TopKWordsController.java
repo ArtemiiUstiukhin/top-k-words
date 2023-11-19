@@ -39,7 +39,7 @@ public class TopKWordsController {
                     .body("Invalid value for K. K must be greater than 0");
 
             if (file.getSize() > MAX_FILE_SIZE)
-                return ResponseEntity.status(HttpStatus.REQUEST_ENTITY_TOO_LARGE)
+                return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE)
                     .body("File size exceeds the maximum allowed limit");
             
             List<String> topKWords = topKWordsService.findTopKWords(file, k);
