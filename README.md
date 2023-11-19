@@ -9,10 +9,21 @@ Web app that takes a text file and finds the top K most frequent words.
 
 ## How to build & run app:
 
-- cd app
-- ./mvnw clean install
-- ./mvnw spring-boot:run
+```
+cd app
+./mvnw clean install
+./mvnw spring-boot:run
+```
+
+## How to tun unit tests:
+
+```
+cd app
+./mvnw test
+```
 
 ## How to test the app:
 
+```
 curl -X POST -F "file=@test.txt" -F "k=10" http://localhost:8080/api/topk/analyze
+```
