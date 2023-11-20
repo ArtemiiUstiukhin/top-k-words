@@ -1,5 +1,6 @@
 package com.example.app;
 
+import com.example.app.logic.TopKWordsService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

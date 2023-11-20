@@ -1,4 +1,4 @@
-package com.example.app;
+package com.example.app.logic;
 
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;

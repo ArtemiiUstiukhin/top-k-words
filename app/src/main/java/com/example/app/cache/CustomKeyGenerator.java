@@ -1,4 +1,4 @@
-package com.example.app;
+package com.example.app.cache;
 
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.stereotype.Component;
@@ -27,8 +27,7 @@ public class CustomKeyGenerator implements KeyGenerator {
 
     private String getMultipartFileHash(MultipartFile file) {
         try {
-            String fileHash = DigestUtils.md5Hex(file.getBytes());
-            return fileHash;
+            return DigestUtils.md5Hex(file.getBytes());
         } catch(Exception e) {
             System.out.println("Error on trying to calculate MultipartFile hash: " + e);
 			return file.getOriginalFilename();
