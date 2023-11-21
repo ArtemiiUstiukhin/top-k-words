@@ -10,14 +10,14 @@ Web app that takes a text file and finds the top K most frequent words.
 ## How to build app & run unit tests:
 
 ```
-cd app
+cd top-k-words
 ./gradlew clean build
 ```
 
 ## How to run the app:
 
 ```
-cd app
+cd top-k-words
 ./gradlew run
 ```
 
