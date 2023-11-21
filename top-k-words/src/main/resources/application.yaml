@@ -1,1 +1,4 @@
-
+security:
+  jwt:
+    secret-key: secretkettosignjwttoken
+    token-duration: 1D

@@ -1,2 +1,11 @@
-package com.example.topkwords.model;public class LoginRequest {
+package com.example.topkwords.model;
+
+import lombok.Builder;
+import lombok.Getter;
+
+@Getter
+@Builder
+public class LoginRequest {
+    private final String email;
+    private final String password;
 }
