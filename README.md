@@ -58,3 +58,7 @@ curl -X POST http://localhost:8080/api/topk/analyze \
 ```
 
 Feel free to experiment with the file content and K parameter.
+
+#### NOTE!
+
+3 sec delay was added to the file analysis to demonstrate caching impact on the app performance! Call `/api/topk/analyze` endpoint second time with the same parameters (same K value and same file content) to test caching.
